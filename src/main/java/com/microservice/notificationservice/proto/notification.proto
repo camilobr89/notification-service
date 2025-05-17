@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.microservice.notificationservice.grpc";
+option java_outer_classname = "NotificationServiceProto";
+
+service NotificationService {
+  rpc SendNotification (NotificationRequest) returns (NotificationResponse);
+}
+
+message NotificationRequest {
+  string user_id = 1;
+  string email = 2;
+  string message = 3;
+}
+
+message NotificationResponse {
+  string status = 1;
+}
