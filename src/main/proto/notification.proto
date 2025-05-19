@@ -5,13 +5,12 @@ option java_package = "com.microservice.notificationservice.grpc";
 option java_outer_classname = "NotificationServiceProto";
 
 service NotificationService {
-  rpc SendNotification (NotificationRequest) returns (NotificationResponse);
+  rpc sendNotification (NotificationRequest) returns (NotificationResponse);
 }
 
 message NotificationRequest {
-  string user_id = 1;
-  string email = 2;
-  string message = 3;
+  string email = 1;
+  string message = 2;
 }
 
 message NotificationResponse {
